@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="from-cyan-500 via-indigo-600 to-rose-400">
+    <div class="container mx-auto flex flex-wrap justify-between items-center py-10">
+        <!-- Left side text -->
+        <p class="text-fuchsia-600 lg:text-6xl text-2xl md:text-3xl py-6 px-5">
+            <span class="lg:text-6xl text-20xl font-light text-purple-900">Tech </span> <span class="lg:text-6xl text-20xl font-light text-fuchsia-600"> is not 🚀 Science.</span><br>
+            Just <span class="lg:text-6xl text-20xl font-light text-purple-900 font-mono">RAG</span> it.<br>
+        </p>
+
+
+    </div>
+    <div class="container mx-auto p-5">
+            <p class="text-sky-600 text-xl flex flex-wrap md:text-2xl lg:text-3xl">
+                Gearing Up for the Future 🛫
+            </p>
+    </div>
+
+
+    <!-- Section with description -->
+    <div class="container mx-auto px-5">
+            <p class="text-red-500 flex flex-wrap md:text-xl lg:text-2xl">
+                ⛓️‍💥 Open Source is Passion and ❤️.
+            </p>
+
+        <div class=" container py-10 mx-auto rounded-lg ml-15 px-15 flex justify-between flex-wrap ">
+            <p class="flex rounded-lg  border-fuchsia-900 text-purple-800 border text-2lg md:text-3xl lg:text-4xl font-thin">
+                <a href="https://s9lab.dev/connect/" class="bg-opacity-10 backdrop-blur-lg shadow-lg overflow-hidden hover:bg-purple-100  text-lg text-purple hover:text-black p-2 rounded-2xl ">Stay Connected ⨠
+                </a>
+            </p>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="w-full h-1 bg-gradient-to-r from-cyan-500 via-indigo-600 to-rose-400 my-1 backdrop-blur-lg shadow-lg bg-opacity-10"></div>
+
+    <div class="text-2lg md:text-3xl lg:text-4xl font-thin py-5 mx-10 px-10 text-fuchsia-900">
+        App Galaxy
+    </div>
+<div class="container w-full h-5 backdrop-blur-lg shadow-lg bg-opacity-10"></div>
+<div class="container p-4 mx-auto">
+    <div class="font-thincontainer flex flex-wrap justify-center">
+        {% set data = load_data(path="apps.json", format="json") %}
+        {% for item in data %}
+        <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6 ">
+                    <p class="text-2xl text-purple-700 font-light">
+                        <a href="{{ item.url }}">
+                            {{ item.name }}
+                        </a>
+                    </p>
+                    <div class="w-full h-1 bg-gradient-to-r from-cyan-500 via-indigo-600 to-rose-400 my-1 backdrop-blur-lg shadow-lg bg-opacity-10"></div>
+                    <p class="text-base text-slate-950 mt-4">
+                        {{ item.description }}
+                    </p>
+                    <p class="text-fuchsia-900 mt-4">
+                        <a href="{{ item.url}}" class="hover:underline">
+                            Visit App  → 
+                        </a>
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+
+
+{% endblock %}
